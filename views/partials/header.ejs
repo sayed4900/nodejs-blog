@@ -1,6 +1,10 @@
 
 <header class="header">
-    <a href="/" class="header-logo">Blog</a>
+    <div class="header-main">
+        <a href="/" class="header-logo">Blog</a>
+        <a href="/create-post" class="dashboard"  >Dashboard</a>
+    </div>
+
     <nav class="header__nav">
         <ul>
             <li>
@@ -14,10 +18,19 @@
             </li>
         </ul>
     </nav>
-    <div class="header__button">
-        <button class="searchBtn" aria-expanded="false">Search</button>
-        
-        <img src="/img/search.svg" alt="">
+    
+    <div>
+        <ul>
+            <% if (user) {   %>
+                <li>Welcome, <%= user.email %></li>
+                <li><a href="/auth/logout">Log out</a></li>
+            <%} else{ %> 
+                <li><a href="/auth/login">Log in</a></li>
+                <li><a href="/auth/signup" >Sign up</a></li>
+        <% } %>
+        </ul>
     </div>
     
 </header>
+
+

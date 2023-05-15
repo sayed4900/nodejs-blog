@@ -4,7 +4,7 @@ const Post = require('../models/Post')
 module.exports.getPosts=async(req, res) => {
         try{
             
-            let perPage = 5;
+            let perPage = 10;
             let page = req.query.page || 1 ;
     
             const postData = await Post.aggregate([ {$sort:{createdAt:1}} ]).skip(perPage * page - perPage).
@@ -24,4 +24,14 @@ module.exports.getPost=async(req, res) => {
     const post = await Post.findById(req.params.id) ; 
     console.log(post);
     res.render('getSpecificPost.ejs',{post,title:post.title})
+}
+
+module.exports.getPost=async(req, res) => {
+    res.render('createPost.ejs',{ title:'create post'})
+    
+}
+module.exports.createPost=async(req, res) => {
+    await Post.create(req.body) ; 
+    res.redirect('/');
+    
 }

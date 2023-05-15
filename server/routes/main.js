@@ -4,6 +4,9 @@ const postController = require('../controllers/postController');
 router.get('/',postController.getPosts);
 
 router.get('/post/:id', postController.getPost);
+router.get('/create-post',postController.getPost);
+router.post('/create-post',postController.createPost);
+
 
 // function inserPostData (){
 //     Post.insertMany(

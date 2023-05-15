@@ -373,3 +373,22 @@ footer i {
 }
 
  
+
+div ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+div ul li {
+  list-style: none;
+  margin-right: 1rem;
+}
+
+.header-main  {
+  display: flex;
+  justify-content: space-between;
+}
+.header-main a {
+  display: block;
+  margin-left: 10px;
+}
