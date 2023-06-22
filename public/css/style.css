@@ -260,7 +260,11 @@ img {
 footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 3rem auto;
+  background-color: #dabc93;
+  padding: 20px;
+  border-radius: 6px;
 }
 
 footer i {
